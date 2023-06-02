@@ -110,3 +110,20 @@ window.onload = function() {
         sentenceDisplay.textContent = sentences[randomIndex];
     };
 };
+
+const topicButtons = document.querySelectorAll('.topic-button');
+let selectedTopic = null;
+
+// Add event listeners to the topic buttons
+topicButtons.forEach(button => {
+  button.addEventListener('click', function() {
+    // Remove the 'selected' class from all buttons
+    topicButtons.forEach(btn => btn.classList.remove('selected'));
+
+    // Add the 'selected' class to the clicked button
+    button.classList.add('selected');
+
+    // Store the selected topic in the selectedTopic variable
+    selectedTopic = button.innerText;
+  });
+});
