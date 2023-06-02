@@ -11,7 +11,7 @@ topicButtons.forEach(button => {
     } else {
       // Deselect any previously selected button
       topicButtons.forEach(btn => btn.classList.remove('selected'));
-      
+
       // Select the clicked button
       button.classList.add('selected');
       selectedTopic = button.innerText;
@@ -21,16 +21,15 @@ topicButtons.forEach(button => {
 
 // API request function
 async function generateIcebreaker() {
-    let prompt;
-  
-    if (selectedTopic) {
-      prompt = `Generate an icebreaker related to the topic: ${selectedTopic}`;
-    } else {
-      prompt = 'Generate a generic icebreaker';
-    }
+  let prompt;
+
+  if (selectedTopic) {
+    prompt = `Generate an icebreaker related to the topic: ${selectedTopic}`;
+  } else {
+    prompt = 'Generate a generic icebreaker';
+  }
 
   // Prepare the API request data
-  const prompt = `Generate an icebreaker for a business team related to the topic: ${selectedTopic}`;
   const apiKey = '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'; // Replace with your actual API key
   const apiUrl = 'https://api.openai.com/v1/engines/davinci-codex/completions';
 
