@@ -117,13 +117,17 @@ let selectedTopic = null;
 // Add event listeners to the topic buttons
 topicButtons.forEach(button => {
   button.addEventListener('click', function() {
-    // Remove the 'selected' class from all buttons
-    topicButtons.forEach(btn => btn.classList.remove('selected'));
-
-    // Add the 'selected' class to the clicked button
-    button.classList.add('selected');
-
-    // Store the selected topic in the selectedTopic variable
-    selectedTopic = button.innerText;
+    if (button.classList.contains('selected')) {
+      // Deselect the button if it is already selected
+      button.classList.remove('selected');
+      selectedTopic = null;
+    } else {
+      // Deselect any previously selected button
+      topicButtons.forEach(btn => btn.classList.remove('selected'));
+      
+      // Select the clicked button
+      button.classList.add('selected');
+      selectedTopic = button.innerText;
+    }
   });
 });
