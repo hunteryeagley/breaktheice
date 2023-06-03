@@ -30,7 +30,7 @@ async function generateIcebreaker() {
   }
 
   // Prepare the API request data
-  const apiKey = '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'; // Replace with your actual API key
+  const apiKey = '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'; // Replace with your actual API key
   const apiUrl = 'https://api.openai.com/v1/engines/davinci-codex/completions';
 
   try {
@@ -38,7 +38,7 @@ async function generateIcebreaker() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${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}`
+        'Authorization': `Bearer ${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}`
       },
       body: JSON.stringify({
         prompt,
