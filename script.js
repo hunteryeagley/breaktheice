@@ -38,7 +38,7 @@ async function generateIcebreaker() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${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}`
+        'Authorization': `Bearer ${apiKey}`
       },
       body: JSON.stringify({
         prompt,
